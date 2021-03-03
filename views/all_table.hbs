@@ -1,0 +1,28 @@
+<h1 class="text-center mb-4">{{title}}</h1>
+<table class="table table-sm table-bordered table-striped table-hover">
+    <thead class="shadow-sm">
+        <tr class="border-dark border-bottom">
+            {{#each fields}}
+                {{#if (idCheck this.name)}}
+                    <th scope="col" class="text-center"><a href="/web/bookmarks?sort=id" class="link-secondary">{{#capitalize}}{{this.name}}{{/capitalize}}</a></th>
+                {{else if (topicCheck this.name)}}
+                    <th scope="col" class="text-center"><a href="/web/bookmarks" class="link-secondary">{{#capitalize}}{{this.name}}{{/capitalize}}</a></th>
+                {{else}}
+                    <th scope="col" class="text-center">{{#capitalize}}{{this.name}}{{/capitalize}}</th>
+                {{/if}}
+            {{/each}}
+            <th scope="col" class="text-center">[]</th>
+        </tr>
+    </thead>
+    <tbody class="align-middle">
+        {{#each results}}
+            <tr>
+                <td class="text-center user-select-all">{{#editLink}}{{this.id}}{{/editLink}}</td>
+                <td class="text-center">{{this.topic}}</td>
+                <td class="user-select-all">{{this.url}}</td>
+                <td>{{this.content}}</td>
+                <td class="text-center">{{#deleteLink}}{{this.id}}{{/deleteLink}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+<h1 class="text-center">{{title}}</h1>
+<form action="" method="post">
+    <div class="mb-2">
+        <label for="topic" class="form-label">Topic</label>
+        <input id="topic" type="text" name="topic" class="form-control" placeholder="JavaScript" value="" />
+    </div>
+    <div class="mb-2">
+        <label for="url" class="form-label">URL</label>
+        <input id="url" type="url" name="url" class="form-control" placeholder="https://www.example.com/cool-site-bro" value="" />
+    </div>
+    <div class="mb-2">
+        <label for="about" class="form-label">Content Information</label>
+        <textarea name="about" id="about" cols="30" rows="10" class="form-control"
+                  placeholder="Please enter information about the bookmark here..."></textarea>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+</form>
+{{#if errors}}
+    <ul>
+        {{#each errors}}
+            <li>{{this.msg}}</li>
+        {{/each}}
+    </ul>
+{{/if}}

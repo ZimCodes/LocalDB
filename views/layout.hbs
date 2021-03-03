@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>{{title}}</title>
+      <link rel='stylesheet' href='/stylesheets/style.css' />
+      <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+      <script src="/javascripts/bootstrap.min.js" defer></script>
+  </head>
+  <body>
+  <span id="top" class="position-absolute"></span>
+  <div class="container-fluid">
+      <div class="row">
+          <aside class="col-2 nav flex-column text-center">
+              <a href="/login/reset" class="link-primary">Sign Out</a>
+              <h3 class="text-decoration-underline mt-4">Tables</h3>
+              <section class="nav-item mt-2">
+                  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#bookmarkTable" aria-expanded="false" aria-controls="bookmarkTable">
+                      Bookmark
+                  </button>
+                  <div id="bookmarkTable" class="collapse">
+                      <ul class="nav flex-column">
+                          <li class="nav-item"><a href="/web/bookmarks" class="link-primary nav-link">All</a></li>
+                          <li class="nav-item"><a href="/web/bookmark/new" class="link-primary nav-link">New</a></li>
+                      </ul>
+                  </div>
+              </section>
+              <a href="#top" class="bg-secondary text-light shadow fw-bold rounded-pill sticky-top top-50 mt-3 py-1">Back to Top</a>
+              <!--Insert Database Tables here!-->
+          </aside>
+          <main class="col">
+              {{{body}}}
+          </main>
+      </div>
+  </div>
+  </body>
+</html>
